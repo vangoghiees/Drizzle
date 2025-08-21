@@ -7,20 +7,29 @@ $cpf = $_POST['cpf'] ?? '';
 $senha = $_POST['senha'] ?? '';
 $bloco = $_POST['bloco'] ?? '';
 $numero = $_POST['numero'] ?? '';
+$endereco = $_POST['endereco'] ?? '';
+$celular = $_POST['celular'] ?? '';
+$tipo_usuario = $_POST['tipo_usuario'] ?? 'morador'; // valor padrão
 
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
+// verifica duplicados
 $stmtCheck = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email OR cpf = :cpf");
 $stmtCheck->execute(['email' => $email, 'cpf' => $cpf]);
 $existe = $stmtCheck->fetch(PDO::FETCH_ASSOC);
 
 if ($existe) {
-    // Usuário já existe, redireciona para a página de erro
     header("Location: ../../register.html?erro=1");
     exit();
-};
+}
 
-$stmt = $pdo->prepare("INSERT INTO usuarios (nome_completo, email, cpf, senha, bloco_torre, numero_ap) VALUES (:nome, :email, :cpf, :senha, :bloco, :numero)");
+// insere no banco
+$stmt = $pdo->prepare("
+    INSERT INTO usuarios 
+    (nome_completo, email, cpf, senha, bloco_torre, numero_ap, endereco, celular, tipo_usuario)
+    VALUES 
+    (:nome, :email, :cpf, :senha, :bloco, :numero, :endereco, :celular, :tipo_usuario)
+");
 
 try {
     $stmt->execute([
@@ -29,14 +38,15 @@ try {
         'cpf' => $cpf,
         'senha' => $senhaHash,
         'bloco' => $bloco,
-        'numero' => $numero
+        'numero' => $numero,
+        'endereco' => $endereco,
+        'celular' => $celular,
+        'tipo_usuario' => $tipo_usuario
     ]);
-    
-    // se tiver dado certo vai pra pagina de login bb
+
     header("Location: ../../login.html?sucesso=1");
     exit();
 } catch (Exception $e) {
-    // se tiver dado errado continua no register
     header("Location: ../../register.html?erro=2");
     exit();
 }
