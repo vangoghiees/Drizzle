@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Drizzle | Cadastro</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <div class="container">
+    <header class="logo-area">
+      <img src="assets/icone_drizzle.png" alt="Ícone Drizzle">
+      <h1>Drizzle</h1>
+      <p>Seja bem-vindo(a)! Cadastre-se para acessar o sistema.</p>
+    </header>
+
+    <!-- Formulário -->
+    <form action="crud/db/register.php" method="post" class="register-form">
+      <input type="text" name="nome_completo" placeholder="Nome completo" required>
+      <input type="text" name="cpf" placeholder="CPF (somente números)" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="text" name="endereco" placeholder="Endereço" required>
+      <input type="text" name="celular" placeholder="Celular com DDD" required>
+      <input type="text" name="bloco_torre" placeholder="Bloco/Torre" required>
+      <input type="text" name="numero_ap" placeholder="Número do AP" required>
+
+      <section class="role-select">
+        <label><input type="radio" name="role" value="sindico" required> Síndico</label>
+        <label><input type="radio" name="role" value="morador" required> Morador</label>
+      </section>
+
+      <input type="password" name="senha" placeholder="Senha" required>
+
+      <div class="checkbox">
+        <input type="checkbox" name="termos" required>
+        <span>Li e concordo com os <a href="#">termos de uso</a></span>
+      </div>
+
+      <button type="submit" class="btn-submit">Criar conta</button>
+    </form>
+
+    <footer class="footer-text">
+      <p>Seus dados estão seguros!</p>
+      <p>Já possui uma conta? <a href="login.html">Fazer login</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('assets/fundo.jpg') no-repeat center center/cover #3a517ac8;
+    background-blend-mode: multiply;
+    backdrop-filter: blur(4px);
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.container {
+    background: #fff;
+    display: flex;
+    width: 900px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px; /* Adicionado para aproximar do info-out */
+}
+
+.left {
+    flex: 1;
+    background: #384b70;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.left img {
+    max-width: 120px;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.left h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+p a {
+    color: #3A60FF;
+    text-decoration: none;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 70px 12px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    background-color: #88888837;
+}
+
+#email {
+    background-image: url("assets/email.png");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px 20px;
+    padding-right: 40px;
+}
+
+#password {
+    background-image: url("assets/cadeado.png");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px 20px;
+    padding-right: 40px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #243b55;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #293753;
+}
+
+.info-out {
+    width: 100%;
+    text-align: center;
+    padding: 5px 0 15px;
+    font-size: 14px;
+    color: #fff;
+    margin-top: -45px; 
+}
+
+.info-out a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.info-out a:hover {
+    text-decoration: underline;
+}

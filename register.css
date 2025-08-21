@@ -1,0 +1,120 @@
+:root {
+	--blue-dark: #144C85;
+	--blue-light: #B0C4DE;
+	--blue-mid: #446480;
+	--text-dark: #222;
+	--text-light: #fff;
+}
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url('assets/fundo.jpg') no-repeat center center/cover #3a517ac8;
+	background-blend-mode: multiply;
+	backdrop-filter: blur(4px);
+
+
+}
+
+.container {
+	background: #fff;
+	border-radius: 20px;
+	padding: 30px 40px;
+	width: 600px;
+	max-width: 90%;
+	margin: 40px auto;
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.logo-area img {
+	width: 80px;
+	margin-bottom: 10px;
+}
+
+.logo-area h1 {
+	margin: 0;
+	font-size: 26px;
+	color: var(--blue-dark);
+}
+
+.logo-area p {
+	margin: 10px 0 20px;
+	font-size: 14px;
+}
+
+.role-select {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.role-select input {
+	margin-right: 6px;
+}
+
+.register-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 15px 20px;
+	text-align: left;
+}
+
+.register-form label {
+	display: block;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--blue-light);
+	border-radius: 20px;
+}
+
+.checkbox {
+	grid-column: span 2;
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+}
+
+.checkbox input {
+	margin-right: 8px;
+}
+
+.btn-submit {
+	grid-column: span 2;
+	background: var(--blue-mid);
+	color: #fff;
+	border: none;
+	border-radius: 50px;
+	padding: 12px;
+	font-size: 14px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.footer-text {
+	margin-top: 20px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.footer-text a {
+	color: var(--blue-light);
+	text-decoration: none;
+}

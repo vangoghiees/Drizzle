@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drizzle | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <main class="main">
+        <div class="container">
+            <!-- lado esquerdo -->
+            <div class="left">
+                <img src="assets/logo.png" alt="Logo Drizzle">
+                <h2>Drizzle</h2>
+                <p>Seja bem vindo(a) de volta!</p>
+            </div>
+
+            <!-- lado direito -->
+            <div class="right">
+                <h3>Acesse sua conta para continuar gerenciando seu condomínio.</h3>
+                <br>
+
+                <form action="crud/db/login.php" method="POST">
+                    <div class="input-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@gmail.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="senha" placeholder="••••••••" required>
+                    </div>
+
+                    <button type="submit">FAZER LOGIN</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="info-out">
+        <p>Seus dados estão seguros com a gente!</p>
+        <p>Ainda não tem uma conta? <a href="register.html">Fazer cadastro</a></p>
+    </div>
+</body>
+
+</html>
