@@ -4,18 +4,18 @@ require "connection.php";
 $email = $_POST['email'] ?? '';
 $senha = $_POST['senha'] ?? '';
 
-// Busca usuário pelo email e senha (texto puro)
-$stmt = $pdo->prepare("SELECT * FROM usuarios_teste WHERE email = :email AND senha = :senha");
-$stmt->execute(['email' => $email, 'senha' => $senha]);
+$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
+$stmt->execute(['email' => $email]);
 
 $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($usuario) {
-    // Login correto
+if ($usuario && password_verify($senha, $usuario['senha'])) { // verifica se a senha hasheada bate com a senha do banco
+    // se o login estiver correto vai pra teste.html
     header("Location: ../../teste.html");
     exit();
 } else {
-    // E-mail ou senha incorretos
+    // email ou senha incorretos, vai pra pagina de erro
     header("Location: login.html?erro=1");
     exit();
 }
+?>
