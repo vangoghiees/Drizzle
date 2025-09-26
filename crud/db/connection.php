@@ -1,5 +1,9 @@
 <?php
 
+ini_set('session.gc_maxlifetime', 604800);
+session_set_cookie_params(604800); // cookie 7 dias
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";

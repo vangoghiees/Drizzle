@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: url('assets/fundo.jpg') no-repeat center center/cover #3a517ac8;
+    background: url('../assets/fundo.jpg') no-repeat center center/cover #3a517ac8;
     background-blend-mode: multiply;
     backdrop-filter: blur(4px);
 }
